@@ -1,1 +1,150 @@
+@use '../mixins/responsive.scss' as *;
 
+.header {
+    background-image: url(../../../dist/assets/images/bg-main-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 1rem;
+    height: 300px;
+
+    @include responsive (laptop) {
+        background-image: url(../../../dist/assets/images/bg-main-desktop.png);
+        background-repeat: no-repeat;
+        background-size: 125%;
+        height: 900px;
+        width: 400px;
+        padding: 0;
+    }
+
+    &__credit-card-owner {
+        position: absolute;
+        color: white;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: .9rem;
+        bottom: 1.3rem;
+        left: 3rem;
+    }
+
+    &__credit-card-date {
+        position: absolute;
+        color: white;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: .9rem;
+        bottom: 1.3rem;
+        right: 2rem;
+    }
+
+    &__credit-card {
+        margin: 1rem;
+        height: 170px;
+        width: 310px;
+        background-color: gray;
+        border-radius: 8px;
+
+        @include responsive (laptop) {
+            width: 370px;
+            height: 190px;
+        }
+    }
+
+    &__credit-cards {
+        position: relative;
+        width: 600px;
+        margin: auto;
+
+        @include responsive (laptop) {
+            height: 350px;
+            margin-top: 30%;
+        }
+    }
+}
+
+
+.credit-card--1 {
+    background-image: url(../../../dist/assets/images//bg-card-back.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    right: 9rem;
+    top: 0;
+    transform: translateY(-1);
+
+    @include responsive (laptop) {
+        top: 13.5rem;
+        right: 0;
+        left: 14rem;
+    }
+
+
+    &::after {
+        content: '000';
+        color: white;
+        font-family: 'Space Grotesk', sans-serif;
+        position: absolute;
+        transform: translateZ(10);
+        top: 4.7rem;
+        right: 3.2rem;
+
+        @include responsive (laptop) {
+            content: '000';
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            position: absolute;
+            transform: translateZ(10);
+            top: 5.8rem;
+            right: 3.2rem;
+        }
+    }
+}
+
+.credit-card--2 {
+    display: flex;
+    background-image: url(../../../dist/assets/images/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 8rem;
+    left: 1rem;
+    transform: translateY(-1);
+
+    @include responsive (laptop) {
+        top: 0;
+        left: 8rem;
+    }
+
+    &::after {
+        content: '';
+        width: 70px;
+        height: 70px;
+        background-image: url(../../../dist/assets/images/card-logo.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        transform: translateZ(10);
+        top: .8rem;
+        left: .8rem;
+
+        @include responsive (laptop) {
+            width: 80px;
+            height: 80px;
+        }
+
+    }
+
+    &::before {
+        content: '0000 0000 0000 0000';
+        color: white;
+        font-size: 1.2rem;
+        font-family: 'Space Grotesk', sans-serif;
+        position: absolute;
+        top: 6rem;
+        right: 2.5rem;
+        transform: translateZ(10);
+
+        @include responsive (laptop) {
+            font-size: 1.5rem;
+            right: 3rem;
+        }
+
+    }
+}

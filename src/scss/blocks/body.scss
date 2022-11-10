@@ -1,4 +1,8 @@
-html {
-}
+@use '../mixins/responsive.scss' as *;
+
 body {
+
+    @include responsive (laptop) {
+        display: flex;
+    }
 }
